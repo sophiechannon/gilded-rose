@@ -21,5 +21,22 @@ describe GildedRose do
       gilded_rose.add(fake_item_2)
       expect(gilded_rose.items).to eq [fake_item, fake_item_2]
     end
+    it "can add items to the list on bulk" do
+      fake_item = double :fake_item
+      fake_item_2 = double :fake_item
+      item_array = [fake_item, fake_item_2]
+      gilded_rose = GildedRose.new
+      gilded_rose.add(item_array)
+      expect(gilded_rose.items).to eq [fake_item, fake_item_2]
+    end
   end
+  # describe "update_quality" do
+  #   it "decreases the quality by 1 on normal items" do
+  #     fake_item = double :fake_item, name: "Shrunken head", sell_in: 10, quality: 50
+  #     gilded_rose = GildedRose.new
+  #     gilded_rose.add(fake_item)
+  #     gilded_rose.update_quality
+  #     expect(fake_item).to_receive()
+  #   end
+  # end
 end
