@@ -60,7 +60,7 @@ class GildedRose
             item.quality = item.quality - item.quality
           end
         else
-          # brie continues to get better by
+          # brie continues to get better by 2 afer expiry
           if item.quality < 50
             item.quality = item.quality + 1
           end
