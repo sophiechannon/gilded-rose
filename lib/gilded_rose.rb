@@ -1,7 +1,15 @@
 class GildedRose
 
-  def initialize(items)
-    @items = items
+  def initialize
+    @items = []
+  end
+
+  def add(item)
+    @items << item
+  end
+
+  def items
+    return @items
   end
 
   def update_quality()
@@ -47,11 +55,11 @@ class GildedRose
               end
             end
           else
-            # passes loose all value after sellby date
+            # passes lose all value after sellby date
             item.quality = item.quality - item.quality
           end
         else
-          # brie continues to get better by 1
+          # brie continues to get better by
           if item.quality < 50
             item.quality = item.quality + 1
           end
