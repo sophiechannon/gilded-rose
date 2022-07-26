@@ -27,3 +27,9 @@ Sulfuras:
 NEW - conjured:
 - degrades by 2 each day
 - degrades by 4 after SellIn date
+
+## Tests
+
+- check that all items' sell_in degrades at the correct rate
+- check that all items' quality degrades at the correct rate
+- check that quality cannot exceed 50 on any items

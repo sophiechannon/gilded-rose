@@ -30,13 +30,4 @@ describe GildedRose do
       expect(gilded_rose.items).to eq [fake_item, fake_item_2]
     end
   end
-  # describe "update_quality" do
-  #   it "decreases the quality by 1 on normal items" do
-  #     fake_item = double :fake_item, name: "Shrunken head", sell_in: 10, quality: 50
-  #     gilded_rose = GildedRose.new
-  #     gilded_rose.add(fake_item)
-  #     gilded_rose.update_quality
-  #     expect(fake_item).to_receive()
-  #   end
-  # end
 end
