@@ -20,7 +20,7 @@ describe GildedRose do
     item = Item.new("Shrunken head", 10, 32)
     item_2 = Item.new("Mermaid tail", 5, 21)
     gilded_rose = GildedRose.new
-    gilded_rose.add([item, item_2])
+    gilded_rose.addSeveral([item, item_2])
     gilded_rose.update_quality
     expect(item.quality).to eq 31
     expect(item_2.quality).to eq 20
@@ -29,7 +29,7 @@ describe GildedRose do
     item = Item.new("Shrunken head", 0, 32)
     item_2 = Item.new("Mermaid tail", -2, 21)
     gilded_rose = GildedRose.new
-    gilded_rose.add([item, item_2])
+    gilded_rose.addSeveral([item, item_2])
     gilded_rose.update_quality
     expect(item.quality).to eq 30
     expect(item_2.quality).to eq 19
@@ -52,7 +52,7 @@ describe GildedRose do
     item = Item.new("Shrunken head", 10, 32)
     item_2 = Item.new("Mermaid tail", 5, 21)
     gilded_rose = GildedRose.new
-    gilded_rose.add([item, item_2])
+    gilded_rose.addSeveral([item, item_2])
     gilded_rose.update_quality
     expect(item.sell_in).to eq 9
     expect(item_2.sell_in).to eq 4
@@ -75,7 +75,7 @@ describe GildedRose do
     item = Item.new("Aged Brie", 10, 25)
     item_2 = Item.new("Mermaid tail", 5, 21)
     gilded_rose = GildedRose.new
-    gilded_rose.add([item, item_2])
+    gilded_rose.addSeveral([item, item_2])
     gilded_rose.update_quality
     expect(item.quality).to eq 26
     expect(item_2.quality).to eq 20

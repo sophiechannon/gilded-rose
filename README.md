@@ -30,9 +30,10 @@ NEW - conjured:
 
 ## Tests
 
-- check that all items' sell_in degrades at the correct rate
-- check that all items' quality degrades at the correct rate
-- check that quality cannot exceed 50 on any items
-- prevent items from having negative sell_in when initialised
-- prevent items from having > 50 quality when initialised
+- can add a single item or an array of items at once
+- check that all items' sell_in degrades at the correct rate - DONE
+- check that all items' quality degrades at the correct rate - DONE
+- check that quality cannot exceed 50 on any items - DONE
+- prevent items from having negative sell_in when initialised - I would put this in the item class ideally, but it's forbidden 
+- prevent items from having > 50 quality when initialised - I would put this in the item class ideally, but it's forbidden - DONE
 - capital letters etc
