@@ -25,6 +25,6 @@ class GildedRose
   end
 
   def handleAgedBrie(item)
-    item.quality = 31
+    item.quality += 1
   end
 end

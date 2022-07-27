@@ -55,7 +55,30 @@ describe GildedRose do
     gilded_rose.update_quality
     expect(item.quality).to eq 31
   end
-  # it "increases the quality by 1 on aged brie items after expiry date is reached" do
+  it "increases the quality by 1 on aged brie items before expiry date is reached - different quality" do
+    item = Item.new("Aged Brie", 10, 25)
+    gilded_rose = GildedRose.new
+    gilded_rose.add(item)
+    gilded_rose.update_quality
+    expect(item.quality).to eq 26
+  end
+  it "increases the quality by 1 on aged brie items before expiry date is reached - multiple items" do
+    item = Item.new("Aged Brie", 10, 25)
+    item_2 = Item.new("Mermaid tail", 5, 21)
+    gilded_rose = GildedRose.new
+    gilded_rose.add([item, item_2])
+    gilded_rose.update_quality
+    expect(item.quality).to eq 26
+    expect(item_2.quality).to eq 20
+  end
+  # it "increases the quality by 2 on aged brie items after expiry date is reached" do
+  #   item = Item.new("Aged Brie", -1, 30)
+  #   gilded_rose = GildedRose.new
+  #   gilded_rose.add(item)
+  #   gilded_rose.update_quality
+  #   expect(item.quality).to eq 32
+  # end
+  # it "increases the quality by 1 on aged brie items after expiry date is reached - lower date" do
   #   item = Item.new("Aged Brie", -1, 30)
   #   gilded_rose = GildedRose.new
   #   gilded_rose.add(item)
