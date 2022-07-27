@@ -127,20 +127,20 @@ describe GildedRose do
     gilded_rose.update_quality
     expect(item.sell_in).to eq 10
   end
-  # it "Aged Brie items cannot exceed quality of 50" do
-  #   item = Item.new("Aged Brie", 10, 50)
-  #   gilded_rose = GildedRose.new
-  #   gilded_rose.add(item)
-  #   gilded_rose.update_quality
-  #   expect(item.sell_in).to eq 9
-  #   expect(item.quality).to eq 50
-  # end
-  # it "backstage pass items cannot exceed quality of 50" do
-  #   item = Item.new("Backstage passes to a TAFKAL80ETC concert", 10, 50)
-  #   gilded_rose = GildedRose.new
-  #   gilded_rose.add(item)
-  #   gilded_rose.update_quality
-  #   expect(item.sell_in).to eq 9
-  #   expect(item.quality).to eq 50
-  # end
+  it "Aged Brie items cannot exceed quality of 50" do
+    item = Item.new("Aged Brie", 10, 50)
+    gilded_rose = GildedRose.new
+    gilded_rose.add(item)
+    gilded_rose.update_quality
+    expect(item.sell_in).to eq 9
+    expect(item.quality).to eq 50
+  end
+  it "backstage pass items cannot exceed quality of 50" do
+    item = Item.new("Backstage passes to a TAFKAL80ETC concert", 10, 50)
+    gilded_rose = GildedRose.new
+    gilded_rose.add(item)
+    gilded_rose.update_quality
+    expect(item.sell_in).to eq 9
+    expect(item.quality).to eq 50
+  end
 end

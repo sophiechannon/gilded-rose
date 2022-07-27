@@ -33,3 +33,4 @@ NEW - conjured:
 - check that all items' sell_in degrades at the correct rate
 - check that all items' quality degrades at the correct rate
 - check that quality cannot exceed 50 on any items
+- prevent items 

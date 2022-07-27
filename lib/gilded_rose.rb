@@ -20,7 +20,6 @@ class GildedRose
         handleAgedBrie(item)
       elsif item.name.include?("Backstage pass")
         handleBackstagePasses(item)
-      elsif item.name.include?("Sulfura")
       else
         item.quality -= 1
       end
@@ -31,16 +30,20 @@ class GildedRose
   private
 
   def handleAgedBrie(item)
-    item.sell_in < 0 ? item.quality += 2 : item.quality += 1
+    unless item.quality >= 50
+      item.sell_in < 0 ? item.quality += 2 : item.quality += 1
+    end
   end
 
   def handleBackstagePasses(item)
-    if item.sell_in <= 5
-      item.quality += 3
-    elsif item.sell_in <= 10 
-      item.quality += 2
-    else
-      item.quality += 1
+    unless item.quality >= 50
+      if item.sell_in <= 5
+        item.quality += 3
+      elsif item.sell_in <= 10 
+        item.quality += 2
+      else
+        item.quality += 1
+      end
     end
   end
 end
