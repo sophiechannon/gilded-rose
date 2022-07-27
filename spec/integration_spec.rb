@@ -162,4 +162,20 @@ describe GildedRose do
     expect(item.quality).to eq 48
     expect(item.sell_in).to eq 9
   end
+  it "adds items that don't throw an error" do
+    item = Item.new("Conjured madness", 10, 50)
+    item_2 = Item.new("Backstage passes to a TAFKAL80ETC concert", -1, 30)
+    gilded_rose = GildedRose.new
+    expect { gilded_rose.addSeveral([item, item_2]) }
+      .to raise_error "Backstage passes to a TAFKAL80ETC concert has passed its expiry date!"
+    expect(gilded_rose.items).to eq ([item])
+  end
+  it "stops the program if a bad item is added" do
+    item = Item.new("Conjured madness", 10, 50)
+    item_2 = Item.new("Backstage passes to a TAFKAL80ETC concert", -1, 30)
+    gilded_rose = GildedRose.new
+    expect { gilded_rose.addSeveral([item_2, item]) }
+      .to raise_error "Backstage passes to a TAFKAL80ETC concert has passed its expiry date!"
+    expect(gilded_rose.items).to eq ([])
+  end
 end
