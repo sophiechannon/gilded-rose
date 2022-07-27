@@ -113,20 +113,20 @@ describe GildedRose do
     gilded_rose.update_quality
     expect(item.sell_in).to eq 9
   end
-  # it "never decreases the value on Sulfura items" do
-  #   item = Item.new("Sulfuras, Hand of Ragnaros", 10, 30)
-  #   gilded_rose = GildedRose.new
-  #   gilded_rose.add(item)
-  #   gilded_rose.update_quality
-  #   expect(item.quality).to eq 30
-  # end
-  # it "sulfuras expiry date never decreases" do
-  #   item = Item.new("Sulfuras, Hand of Ragnaros", 10, 30)
-  #   gilded_rose = GildedRose.new
-  #   gilded_rose.add(item)
-  #   gilded_rose.update_quality
-  #   expect(item.sell_in).to eq 10
-  # end
+  it "never decreases the value on Sulfura items" do
+    item = Item.new("Sulfuras, Hand of Ragnaros", 10, 30)
+    gilded_rose = GildedRose.new
+    gilded_rose.add(item)
+    gilded_rose.update_quality
+    expect(item.quality).to eq 30
+  end
+  it "sulfuras expiry date never decreases" do
+    item = Item.new("Sulfuras, Hand of Ragnaros", 10, 30)
+    gilded_rose = GildedRose.new
+    gilded_rose.add(item)
+    gilded_rose.update_quality
+    expect(item.sell_in).to eq 10
+  end
   # it "Aged Brie items cannot exceed quality of 50" do
   #   item = Item.new("Aged Brie", 10, 50)
   #   gilded_rose = GildedRose.new

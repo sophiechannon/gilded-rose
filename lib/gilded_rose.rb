@@ -15,10 +15,12 @@ class GildedRose
 
   def update_quality
     @items.map do |item| 
+      next if item.name.include?("Sulfura")
       if item.name.include?("Aged Brie")
         handleAgedBrie(item)
       elsif item.name.include?("Backstage pass")
         handleBackstagePasses(item)
+      elsif item.name.include?("Sulfura")
       else
         item.quality -= 1
       end
@@ -41,5 +43,4 @@ class GildedRose
       item.quality += 1
     end
   end
-
 end
