@@ -21,13 +21,17 @@ class GildedRose
       elsif item.name.include?("Backstage pass")
         handleBackstagePasses(item)
       else
-        item.quality -= 1
+        handleNormal(item)
       end
       item.sell_in -= 1
     end
   end
 
   private
+
+  def handleNormal(item)
+    item.sell_in > 0 ? item.quality -= 1 : item.quality -= 2
+  end
 
   def handleAgedBrie(item)
     unless item.quality >= 50
@@ -46,4 +50,8 @@ class GildedRose
       end
     end
   end
+
+  # def handleConjured(item)
+
+  # end
 end
