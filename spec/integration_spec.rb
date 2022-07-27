@@ -152,11 +152,12 @@ describe GildedRose do
     expect(item.sell_in).to eq 9
     expect(item.quality).to eq 50
   end
-  # it "conjured items quality increases by 2 before expiry date" do
-  #   item = Item.new("Conjured madness", 10, 50)
-  #   gilded_rose = GildedRose.new
-  #   gilded_rose.add(item)
-  #   gilded_rose.update_quality
-  #   expect(item.sell_in).to eq 8
-  # end
+  it "conjured items quality increases by 2 before expiry date" do
+    item = Item.new("Conjured madness", 10, 50)
+    gilded_rose = GildedRose.new
+    gilded_rose.add(item)
+    gilded_rose.update_quality
+    expect(item.quality).to eq 48
+    expect(item.sell_in).to eq 9
+  end
 end
