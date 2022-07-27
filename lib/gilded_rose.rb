@@ -17,14 +17,29 @@ class GildedRose
     @items.map do |item| 
       if item.name.include?("Aged Brie")
         handleAgedBrie(item)
+      elsif item.name.include?("Backstage pass")
+        handleBackstagePasses(item)
       else
         item.quality -= 1
-        item.sell_in -= 1
       end
+      item.sell_in -= 1
     end
   end
 
+  private
+
   def handleAgedBrie(item)
-    item.quality += 1
+    item.sell_in < 0 ? item.quality += 2 : item.quality += 1
   end
+
+  def handleBackstagePasses(item)
+    if item.sell_in <= 5
+      item.quality += 3
+    elsif item.sell_in <= 10 
+      item.quality += 2
+    else
+      item.quality += 1
+    end
+  end
+
 end
