@@ -14,7 +14,10 @@ class GildedRose
   end
 
   def update_quality()
-    @items[0].quality -= 1
+    @items.map do |item| 
+      item.quality -= 1
+      item.sell_in = 9
+    end
   #   @items.each do |item|
   #     if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
   #       # normal items - degrading by 1 until SellIn date
