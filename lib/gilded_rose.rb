@@ -16,7 +16,7 @@ class GildedRose
   def update_quality()
     @items.map do |item| 
       item.quality -= 1
-      item.sell_in = 9
+      item.sell_in -= 1
     end
   #   @items.each do |item|
   #     if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
