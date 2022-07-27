@@ -6,6 +6,7 @@ class GildedRose
 
   def add(item) 
     fail "Item quality cannot exceed 50!" if item.quality > 50
+    fail "Item cannot have passed it's expiry date!" if item.sell_in < 0
     @items << item
   end
 
