@@ -22,6 +22,10 @@ require ('./lib/item')
 
 I chose to use Ruby for this challenge, because I felt it was well suited to the task. I followed a TDD process by creating a suite of tests to cover all the behaviours of teach item and the GildedRose class. Itiniailly, all these tests passed because the original code was still in place. I then worked to refactor the code item by item, adding more tests as required to follow TDD practice. I then moved on to edge cases / potential errors.
 
+# Code structure
+
+I structured the code by having one main update_quality method within the GildedRose class, which called several private methods that handled the logic.
+
 ## About the program
 
 Gilded Rose is a challenge in refactoring legacy code that relied entirely on nested if statements. The Gilded Rose is a shop that stocks items with variable quality depending on their expiry dates. The aim is to make the code readable and easy to change, plus to add a new category of items to the shop. The item categories are as follows:
