@@ -21,7 +21,7 @@ class GildedRose
 
   def update_quality
     @items.map do |item|
-      next if item.name.include?('Sulfura')
+      next if is_sulfura?(item)
 
       apply_quality_rules(item)
       item.sell_in -= 1
@@ -56,12 +56,17 @@ class GildedRose
     item.quality -= item.sell_in.positive? ? 2 : 4
   end
 
+  def is_sulfura?(item)
+    item.name.downcase.include?("sulfura")
+  end
+
   def apply_quality_rules(item)
-    if item.name.include?('Aged Brie')
+    item_name = item.name.downcase
+    if item_name.include?('aged brie')
       handle_aged_brie(item)
-    elsif item.name.include?('Backstage pass')
+    elsif item_name.include?('backstage pass')
       handle_backstage_pass(item)
-    elsif item.name.include?('Conjured')
+    elsif item_name.include?('conjured')
       handle_conjured(item)
     else
       handle_normal(item)
