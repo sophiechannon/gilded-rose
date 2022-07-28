@@ -1,67 +1,68 @@
+# lib/gilded_rose.rb
+
 class GildedRose
+  # there is no point in updating the items if you can't access them
+  attr_reader :items
 
   def initialize
     @items = []
   end
 
-  def add(item) 
-    fail "#{item.name} quality cannot exceed 50!" if item.quality > 50
-    fail "#{item.name} has passed its expiry date!" if item.sell_in < 0
+  def add(item)
+    raise "#{item.name} quality cannot exceed 50!" if item.quality > 50
+    raise "#{item.name} has passed its expiry date!" if item.sell_in.negative?
+
     @items << item
   end
 
-  def addSeveral(items)
+  def add_several(items)
     items.each { |item| add(item) }
   end
 
-  # there is no point in updating the items if you can't access them
-  def items
-    return @items
-  end
-
   def update_quality
-    @items.map do |item| 
-      next if item.name.include?("Sulfura")
-      applyQualityRules(item)
+    @items.map do |item|
+      next if item.name.include?('Sulfura')
+
+      apply_quality_rules(item)
       item.sell_in -= 1
     end
   end
 
   private
 
-  def handleNormal(item)
-    item.sell_in > 0 ? item.quality -= 1 : item.quality -= 2
+  def handle_normal(item)
+    item.quality -= item.sell_in.positive? ? 1 : 2
   end
 
-  def handleAgedBrie(item)
-    unless item.quality == 50
-      item.sell_in < 0 ? item.quality += 2 : item.quality += 1
-    end
+  def handle_aged_brie(item)
+    return if item.quality == 50
+
+    item.quality += item.sell_in.nagative? ? 2 : 1
   end
 
-  def handleBackstagePasses(item)
-    unless item.quality == 50
-      if item.sell_in <= 5
-        item.quality += 3
-      elsif item.sell_in <= 10 
-        item.quality += 2
-      else
-        item.quality += 1
-      end
-    end
+  def handle_backstage_pass(item)
+    return if item.quality == 50
+
+    item.quality += if item.sell_in <= 5
+                      3
+                    elsif item.sell_in <= 10
+                      2
+                    else
+                      1
+                    end
   end
 
-  def handleConjured(item)
-    item.sell_in > 0 ? item.quality -= 2 : item.quality -= 4
+  def handle_conjured(item)
+    item.quality -= item.sell_in.positive? ? 2 : 4
   end
 
-  def applyQualityRules(item)
-    if item.name.include?("Aged Brie")
-      handleAgedBrie(item)
-    elsif item.name.include?("Backstage pass")
-      handleBackstagePasses(item)
-    elsif item.name.include?("Conjured")
-      handleConjured(item)
+  def apply_quality_rules(item)
+    if item.name.include?('Aged Brie')
+      handle_aged_brie(item)
+    elsif item.name.include?('Backstage pass')
+      handle_backstage_pass(item)
+    elsif item.name.include?('Conjured')
+      handle_conjured(item)
     else
       handleNormal(item)
     end
