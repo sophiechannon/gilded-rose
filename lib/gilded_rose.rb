@@ -37,7 +37,7 @@ class GildedRose
   def handle_aged_brie(item)
     return if item.quality == 50
 
-    item.quality += item.sell_in.nagative? ? 2 : 1
+    item.quality += item.sell_in.negative? ? 2 : 1
   end
 
   def handle_backstage_pass(item)
@@ -64,7 +64,7 @@ class GildedRose
     elsif item.name.include?('Conjured')
       handle_conjured(item)
     else
-      handleNormal(item)
+      handle_normal(item)
     end
   end
 end

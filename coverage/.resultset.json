@@ -51,6 +51,8 @@
       },
       "/Users/sophiegilder/Makers/code-quality/gilded_rose/lib/gilded_rose.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -70,8 +72,6 @@
           20,
           null,
           null,
-          null,
-          null,
           1,
           23,
           28,
@@ -89,19 +89,19 @@
           null,
           1,
           7,
-          6,
           null,
+          6,
           null,
           null,
           1,
           5,
+          null,
           4,
           1,
           3,
           2,
           null,
           1,
-          null,
           null,
           null,
           null,
@@ -310,6 +310,8 @@
       },
       "/Users/sophiegilder/Makers/code-quality/gilded_rose/lib/item.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -338,6 +340,6 @@
         ]
       }
     },
-    "timestamp": 1658997278
+    "timestamp": 1659004678
   }
 }

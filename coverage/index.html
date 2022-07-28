@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-28T09:34:38+01:00">2022-07-28T09:34:38+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-28T11:37:58+01:00">2022-07-28T11:37:58+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -84,7 +84,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#8aa9269231eaef3515b0f548db3f129faf949639" class="src_link" title="lib/item.rb">lib/item.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">13</td>
+            <td class="cell--number">15</td>
             <td class="cell--number">8</td>
             <td class="cell--number">8</td>
             <td class="cell--number">0</td>
@@ -169,13 +169,13 @@
     <ol>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="1">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="1">
+            
             
 
             
 
-            <code class="ruby">class GildedRose</code>
+            <code class="ruby"># lib/gilded_rose.rb</code>
           </li>
         </div>
       
@@ -186,7 +186,7 @@
 
             
 
-            <code class="ruby">    # there is no point in updating the items if you can&#39;t access them</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -197,7 +197,7 @@
 
             
 
-            <code class="ruby">    attr_reader :items</code>
+            <code class="ruby">class GildedRose</code>
           </li>
         </div>
       
@@ -208,7 +208,7 @@
 
             
 
-            <code class="ruby">    </code>
+            <code class="ruby">  # there is no point in updating the items if you can&#39;t access them</code>
           </li>
         </div>
       
@@ -219,12 +219,34 @@
 
             
 
+            <code class="ruby">  attr_reader :items</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">  def initialize</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="29" data-linenumber="6">
+          <li class="covered" data-hits="29" data-linenumber="8">
             <span class="hits">29</span>
             
 
@@ -235,7 +257,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="never" data-hits="" data-linenumber="9">
             
             
 
@@ -246,7 +268,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
+          <li class="never" data-hits="" data-linenumber="10">
             
             
 
@@ -257,7 +279,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
+          <li class="covered" data-hits="1" data-linenumber="11">
             <span class="hits">1</span>
             
 
@@ -268,7 +290,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="35" data-linenumber="10">
+          <li class="covered" data-hits="35" data-linenumber="12">
             <span class="hits">35</span>
             
 
@@ -279,35 +301,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="34" data-linenumber="11">
+          <li class="covered" data-hits="34" data-linenumber="13">
             <span class="hits">34</span>
             
 
             
 
-            <code class="ruby">    raise &quot;#{item.name} has passed its expiry date!&quot; if item.sell_in &lt; 0</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="31" data-linenumber="13">
-            <span class="hits">31</span>
-            
-
-            
-
-            <code class="ruby">    @items &lt;&lt; item</code>
+            <code class="ruby">    raise &quot;#{item.name} has passed its expiry date!&quot; if item.sell_in.negative?</code>
           </li>
         </div>
       
@@ -318,12 +318,34 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="31" data-linenumber="15">
+            <span class="hits">31</span>
+            
+
+            
+
+            <code class="ruby">    @items &lt;&lt; item</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
@@ -334,18 +356,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
+          <li class="covered" data-hits="1" data-linenumber="18">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def addSeveral(items)</code>
+            <code class="ruby">  def add_several(items)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="20" data-linenumber="17">
+          <li class="covered" data-hits="20" data-linenumber="19">
             <span class="hits">20</span>
             
 
@@ -356,35 +378,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="18">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="19">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
           <li class="never" data-hits="" data-linenumber="20">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -450,7 +450,7 @@
 
             
 
-            <code class="ruby">      applyQualityRules(item)</code>
+            <code class="ruby">      apply_quality_rules(item)</code>
           </li>
         </div>
       
@@ -527,7 +527,7 @@
 
             
 
-            <code class="ruby">  def handleNormal(item)</code>
+            <code class="ruby">  def handle_normal(item)</code>
           </li>
         </div>
       
@@ -538,7 +538,7 @@
 
             
 
-            <code class="ruby">    item.quality -= item.sell_in &gt; 0 ? 1 : 2</code>
+            <code class="ruby">    item.quality -= item.sell_in.positive? ? 1 : 2</code>
           </li>
         </div>
       
@@ -571,7 +571,7 @@
 
             
 
-            <code class="ruby">  def handleAgedBrie(item)</code>
+            <code class="ruby">  def handle_aged_brie(item)</code>
           </li>
         </div>
       
@@ -582,29 +582,29 @@
 
             
 
-            <code class="ruby">    unless item.quality == 50</code>
+            <code class="ruby">    return if item.quality == 50</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="39">
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="6" data-linenumber="40">
             <span class="hits">6</span>
             
 
             
 
-            <code class="ruby">      item.quality += item.sell_in &lt; 0 ? 2 : 1</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="40">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
+            <code class="ruby">    item.quality += item.sell_in.negative? ? 2 : 1</code>
           </li>
         </div>
       
@@ -637,7 +637,7 @@
 
             
 
-            <code class="ruby">  def handleBackstagePasses(item)</code>
+            <code class="ruby">  def handle_backstage_pass(item)</code>
           </li>
         </div>
       
@@ -648,84 +648,84 @@
 
             
 
-            <code class="ruby">    unless item.quality == 50</code>
+            <code class="ruby">    return if item.quality == 50</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="45">
+          <li class="never" data-hits="" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="46">
             <span class="hits">4</span>
             
 
             
 
-            <code class="ruby">      item.quality += if item.sell_in &lt;= 5</code>
+            <code class="ruby">    item.quality += if item.sell_in &lt;= 5</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="46">
+          <li class="covered" data-hits="1" data-linenumber="47">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">                        3</code>
+            <code class="ruby">                      3</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="47">
+          <li class="covered" data-hits="3" data-linenumber="48">
             <span class="hits">3</span>
             
 
             
 
-            <code class="ruby">                      elsif item.sell_in &lt;= 10</code>
+            <code class="ruby">                    elsif item.sell_in &lt;= 10</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="48">
+          <li class="covered" data-hits="2" data-linenumber="49">
             <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">                        2</code>
+            <code class="ruby">                      2</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="49">
+          <li class="never" data-hits="" data-linenumber="50">
             
             
 
             
 
-            <code class="ruby">                      else</code>
+            <code class="ruby">                    else</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="50">
+          <li class="covered" data-hits="1" data-linenumber="51">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">                        1</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="51">
-            
-            
-
-            
-
-            <code class="ruby">                      end</code>
+            <code class="ruby">                      1</code>
           </li>
         </div>
       
@@ -736,7 +736,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">                    end</code>
           </li>
         </div>
       
@@ -769,7 +769,7 @@
 
             
 
-            <code class="ruby">  def handleConjured(item)</code>
+            <code class="ruby">  def handle_conjured(item)</code>
           </li>
         </div>
       
@@ -780,7 +780,7 @@
 
             
 
-            <code class="ruby">    item.quality -= item.sell_in &gt; 0 ? 2 : 4</code>
+            <code class="ruby">    item.quality -= item.sell_in.positive? ? 2 : 4</code>
           </li>
         </div>
       
@@ -813,7 +813,7 @@
 
             
 
-            <code class="ruby">  def applyQualityRules(item)</code>
+            <code class="ruby">  def apply_quality_rules(item)</code>
           </li>
         </div>
       
@@ -835,7 +835,7 @@
 
             
 
-            <code class="ruby">      handleAgedBrie(item)</code>
+            <code class="ruby">      handle_aged_brie(item)</code>
           </li>
         </div>
       
@@ -857,7 +857,7 @@
 
             
 
-            <code class="ruby">      handleBackstagePasses(item)</code>
+            <code class="ruby">      handle_backstage_pass(item)</code>
           </li>
         </div>
       
@@ -879,7 +879,7 @@
 
             
 
-            <code class="ruby">      handleConjured(item)</code>
+            <code class="ruby">      handle_conjured(item)</code>
           </li>
         </div>
       
@@ -901,7 +901,7 @@
 
             
 
-            <code class="ruby">      handleNormal(item)</code>
+            <code class="ruby">      handle_normal(item)</code>
           </li>
         </div>
       
@@ -970,7 +970,29 @@
     <ol>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="1">
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># lib/item.rb</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
             <span class="hits">1</span>
             
 
@@ -981,7 +1003,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="2">
+          <li class="covered" data-hits="1" data-linenumber="4">
             <span class="hits">1</span>
             
 
@@ -992,7 +1014,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="3">
+          <li class="never" data-hits="" data-linenumber="5">
             
             
 
@@ -1003,7 +1025,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
+          <li class="covered" data-hits="1" data-linenumber="6">
             <span class="hits">1</span>
             
 
@@ -1014,7 +1036,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="30" data-linenumber="5">
+          <li class="covered" data-hits="30" data-linenumber="7">
             <span class="hits">30</span>
             
 
@@ -1025,7 +1047,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="30" data-linenumber="6">
+          <li class="covered" data-hits="30" data-linenumber="8">
             <span class="hits">30</span>
             
 
@@ -1036,7 +1058,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="30" data-linenumber="7">
+          <li class="covered" data-hits="30" data-linenumber="9">
             <span class="hits">30</span>
             
 
@@ -1047,7 +1069,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
+          <li class="never" data-hits="" data-linenumber="10">
             
             
 
@@ -1058,7 +1080,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="9">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
@@ -1069,7 +1091,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
+          <li class="covered" data-hits="1" data-linenumber="12">
             <span class="hits">1</span>
             
 
@@ -1080,7 +1102,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
+          <li class="covered" data-hits="1" data-linenumber="13">
             <span class="hits">1</span>
             
 
@@ -1091,7 +1113,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="14">
             
             
 
@@ -1102,7 +1124,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="15">
             
             
 
@@ -1447,7 +1469,7 @@
 
             
 
-            <code class="ruby">      gilded_rose.addSeveral([fake_item, fake_item_2])</code>
+            <code class="ruby">      gilded_rose.add_several([fake_item, fake_item_2])</code>
           </li>
         </div>
       
@@ -1907,7 +1929,7 @@
 
             
 
-            <code class="ruby">    gilded_rose.addSeveral([item, item_2])</code>
+            <code class="ruby">    gilded_rose.add_several([item, item_2])</code>
           </li>
         </div>
       
@@ -2006,7 +2028,7 @@
 
             
 
-            <code class="ruby">    gilded_rose.addSeveral([item, item_2])</code>
+            <code class="ruby">    gilded_rose.add_several([item, item_2])</code>
           </li>
         </div>
       
@@ -2270,7 +2292,7 @@
 
             
 
-            <code class="ruby">    gilded_rose.addSeveral([item, item_2])</code>
+            <code class="ruby">    gilded_rose.add_several([item, item_2])</code>
           </li>
         </div>
       
@@ -2523,7 +2545,7 @@
 
             
 
-            <code class="ruby">    gilded_rose.addSeveral([item, item_2])</code>
+            <code class="ruby">    gilded_rose.add_several([item, item_2])</code>
           </li>
         </div>
       
@@ -3513,7 +3535,7 @@
 
             
 
-            <code class="ruby">    expect { gilded_rose.addSeveral([item, item_2]) }</code>
+            <code class="ruby">    expect { gilded_rose.add_several([item, item_2]) }</code>
           </li>
         </div>
       
@@ -3601,7 +3623,7 @@
 
             
 
-            <code class="ruby">    expect { gilded_rose.addSeveral([item_2, item]) }</code>
+            <code class="ruby">    expect { gilded_rose.add_several([item_2, item]) }</code>
           </li>
         </div>
       

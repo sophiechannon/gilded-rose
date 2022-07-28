@@ -1,7 +1,15 @@
 Gilded Rose
 ===========
 
-- Systems need to be able to accept a new class of item (conjured)
+## How to run
+
+````console
+bundle install
+rspec
+
+````
+
+Gilded Rose is a challenge in refactoring legacy code that relied entirely on nested if statements. The Gilded Rose is a shop that stocks items with variable quality depending on their expiry dates. The aim is to make the code readable and easy to change, plus to add a new category of items to the shop. The item categories are as follows:
 
 Normal items:
 - degrade at 1 a day but can't go below 0
