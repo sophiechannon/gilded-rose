@@ -1,4 +1,6 @@
 # lib/item.rb
+# In accordance with the guidelines of the task
+# this class cannot be modified.
 
 class Item
   attr_accessor :name, :sell_in, :quality

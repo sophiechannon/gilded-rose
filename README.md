@@ -15,7 +15,7 @@ To run the program in IRB
 ````irb
 irb
 require ('./lib/gilded_rose')
-require ('./lib/item')
+require ('./lib/[item type you want to add]')
 ````
 
 ## My approach
@@ -25,6 +25,10 @@ I chose to use Ruby for this challenge, because I felt it was well suited to the
 _EDIT: 25 Aug 2022_
 
 Because the Item class couldn't be altered, I created children classes for each type of item that inherited from the parent Item class. This is more robust, because the program behaviour is now determined by the class of the item, instead of relying on the item name to include a specific word.
+
+_EDIT 2: 25 Aug 2022_
+
+In line with the open-closed principle, I moved the functionality for updating items quality and sell_in to the individual classes and used polymorphism for each method to perform a different action when the update method is called from the gilded rose class. This shortened the gilded rose class drastically and also makes it possible to add a new item type without altering the gilded rose class.
 
 # Code structure
 
