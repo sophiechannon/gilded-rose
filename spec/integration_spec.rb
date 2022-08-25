@@ -1,28 +1,28 @@
 require 'gilded_rose'
-require 'item'
 require 'aged_brie'
 require 'backstage_pass'
 require 'conjured'
 require 'sulfura'
+require 'normal'
 
 describe GildedRose do
   it 'decreases the quality by 1 on normal items before expiry date is reached' do
-    item = Item.new('Shrunken head', 10, 50)
+    item = Normal.new('Shrunken head', 10, 50)
     gilded_rose = GildedRose.new
     gilded_rose.add(item)
     gilded_rose.update_quality
     expect(item.quality).to eq 49
   end
   it 'decreases the quality by 1 on normal items before expiry date is reached - lower quality' do
-    item = Item.new('Shrunken head', 10, 32)
+    item = Normal.new('Shrunken head', 10, 32)
     gilded_rose = GildedRose.new
     gilded_rose.add(item)
     gilded_rose.update_quality
     expect(item.quality).to eq 31
   end
   it 'decreases the quality by 1 on normal items before expiry date is reached - multiple items' do
-    item = Item.new('Shrunken head', 10, 32)
-    item_2 = Item.new('Mermaid tail', 5, 21)
+    item = Normal.new('Shrunken head', 10, 32)
+    item_2 = Normal.new('Mermaid tail', 5, 21)
     gilded_rose = GildedRose.new
     gilded_rose.add_several([item, item_2])
     gilded_rose.update_quality
@@ -30,8 +30,8 @@ describe GildedRose do
     expect(item_2.quality).to eq 20
   end
   it 'decreases the quality by 2 on normal items after expiry date is reached - multiple items' do
-    item = Item.new('Shrunken head', 1, 32)
-    item_2 = Item.new('Mermaid tail', 1, 21)
+    item = Normal.new('Shrunken head', 1, 32)
+    item_2 = Normal.new('Mermaid tail', 1, 21)
     gilded_rose = GildedRose.new
     gilded_rose.add_several([item, item_2])
     gilded_rose.update_quality
@@ -40,22 +40,22 @@ describe GildedRose do
     expect(item_2.quality).to eq 18
   end
   it 'decreases the sell_in time by 1 on normal items' do
-    item = Item.new('Shrunken head', 10, 50)
+    item = Normal.new('Shrunken head', 10, 50)
     gilded_rose = GildedRose.new
     gilded_rose.add(item)
     gilded_rose.update_quality
     expect(item.sell_in).to eq 9
   end
   it 'decreases the sell_in time by 1 on normal items - lower count' do
-    item = Item.new('Shrunken head', 4, 50)
+    item = Normal.new('Shrunken head', 4, 50)
     gilded_rose = GildedRose.new
     gilded_rose.add(item)
     gilded_rose.update_quality
     expect(item.sell_in).to eq 3
   end
   it 'decreases the sell_in time by 1 on normal items - multiple items' do
-    item = Item.new('Shrunken head', 10, 32)
-    item_2 = Item.new('Mermaid tail', 5, 21)
+    item = Normal.new('Shrunken head', 10, 32)
+    item_2 = Normal.new('Mermaid tail', 5, 21)
     gilded_rose = GildedRose.new
     gilded_rose.add_several([item, item_2])
     gilded_rose.update_quality
@@ -78,7 +78,7 @@ describe GildedRose do
   end
   it 'increases the quality by 1 on aged brie items before expiry date is reached - multiple items' do
     item = AgedBrie.new('Aged Brie', 10, 25)
-    item_2 = Item.new('Mermaid tail', 5, 21)
+    item_2 = Normal.new('Mermaid tail', 5, 21)
     gilded_rose = GildedRose.new
     gilded_rose.add_several([item, item_2])
     gilded_rose.update_quality

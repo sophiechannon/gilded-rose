@@ -22,49 +22,7 @@ class GildedRose
   def update_quality
     @items.map do |item|
       next if item.is_a? Sulfura
-
-      apply_quality_rules(item)
-      item.sell_in -= 1
-    end
-  end
-
-  private
-
-  def handle_normal(item)
-    item.quality -= item.sell_in.positive? ? 1 : 2
-  end
-
-  def handle_aged_brie(item)
-    return if item.quality == 50
-
-    item.quality += item.sell_in.negative? ? 2 : 1
-  end
-
-  def handle_backstage_pass(item)
-    return if item.quality == 50
-
-    item.quality += if item.sell_in <= 5
-                      3
-                    elsif item.sell_in <= 10
-                      2
-                    else
-                      1
-                    end
-  end
-
-  def handle_conjured(item)
-    item.quality -= item.sell_in.positive? ? 2 : 4
-  end
-
-  def apply_quality_rules(item)
-    if item.is_a? AgedBrie
-      handle_aged_brie(item)
-    elsif item.is_a? BackstagePass
-      handle_backstage_pass(item)
-    elsif item.is_a? Conjured
-      handle_conjured(item)
-    else
-      handle_normal(item)
+      item.update
     end
   end
 end
