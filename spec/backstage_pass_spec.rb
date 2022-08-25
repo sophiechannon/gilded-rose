@@ -9,5 +9,6 @@ describe BackstagePass do
     item = BackstagePass.new('Backstage passes to a TAFKAL80ETC concert', 12, 30)
     item.update
     expect(item.quality).to eq 31
+    expect(item.sell_in).to eq 11
   end
 end

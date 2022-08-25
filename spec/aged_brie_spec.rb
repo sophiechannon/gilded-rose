@@ -10,5 +10,6 @@ describe AgedBrie do
     item = AgedBrie.new('Aged Brie', 10, 30)
     item.update
     expect(item.quality).to eq 31
+    expect(item.sell_in).to eq 9
   end
 end

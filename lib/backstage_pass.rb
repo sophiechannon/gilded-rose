@@ -11,5 +11,7 @@ class BackstagePass < Item
                 else
                   1
                 end
+    
+    @sell_in -= 1
   end
 end
