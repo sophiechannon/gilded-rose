@@ -64,7 +64,7 @@ class GildedRose
     item_name = item.name.downcase
     if item.is_a? AgedBrie
       handle_aged_brie(item)
-    elsif item_name.include?('backstage pass')
+    elsif item.is_a? BackstagePass
       handle_backstage_pass(item)
     elsif item_name.include?('conjured')
       handle_conjured(item)

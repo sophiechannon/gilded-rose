@@ -1,6 +1,7 @@
 require 'gilded_rose'
 require 'item'
 require 'aged_brie'
+require 'backstage_pass'
 
 
 describe GildedRose do
@@ -99,28 +100,28 @@ describe GildedRose do
     expect(item.sell_in).to eq 9
   end
   it 'increases the quality by 1 on backstage pass items up until 10 days before the concert' do
-    item = Item.new('Backstage passes to a TAFKAL80ETC concert', 12, 30)
+    item = BackstagePass.new('Backstage passes to a TAFKAL80ETC concert', 12, 30)
     gilded_rose = GildedRose.new
     gilded_rose.add(item)
     gilded_rose.update_quality
     expect(item.quality).to eq 31
   end
   it 'increases the quality by 2 on backstage pass items between 10 - 6 days before the concert' do
-    item = Item.new('Backstage passes to a TAFKAL80ETC concert', 10, 30)
+    item = BackstagePass.new('Backstage passes to a TAFKAL80ETC concert', 10, 30)
     gilded_rose = GildedRose.new
     gilded_rose.add(item)
     gilded_rose.update_quality
     expect(item.quality).to eq 32
   end
   it 'increases the quality by 2 on backstage pass items between 5 - 1 days before the concert' do
-    item = Item.new('Backstage passes to a TAFKAL80ETC concert', 5, 30)
+    item = BackstagePass.new('Backstage passes to a TAFKAL80ETC concert', 5, 30)
     gilded_rose = GildedRose.new
     gilded_rose.add(item)
     gilded_rose.update_quality
     expect(item.quality).to eq 33
   end
   it 'decreases the sell_in time by 1 on backstage pass items' do
-    item = Item.new('Backstage passes to a TAFKAL80ETC concert', 10, 30)
+    item = BackstagePass.new('Backstage passes to a TAFKAL80ETC concert', 10, 30)
     gilded_rose = GildedRose.new
     gilded_rose.add(item)
     gilded_rose.update_quality
@@ -149,7 +150,7 @@ describe GildedRose do
     expect(item.quality).to eq 50
   end
   it 'backstage pass items cannot exceed quality of 50' do
-    item = Item.new('Backstage passes to a TAFKAL80ETC concert', 10, 50)
+    item = BackstagePass.new('Backstage passes to a TAFKAL80ETC concert', 10, 50)
     gilded_rose = GildedRose.new
     gilded_rose.add(item)
     gilded_rose.update_quality
@@ -166,7 +167,7 @@ describe GildedRose do
   end
   it "adds items that don't throw an error" do
     item = Item.new('Conjured madness', 10, 50)
-    item_2 = Item.new('Backstage passes to a TAFKAL80ETC concert', -1, 30)
+    item_2 = BackstagePass.new('Backstage passes to a TAFKAL80ETC concert', -1, 30)
     gilded_rose = GildedRose.new
     expect { gilded_rose.add_several([item, item_2]) }
       .to raise_error 'Backstage passes to a TAFKAL80ETC concert has passed its expiry date!'
@@ -174,7 +175,7 @@ describe GildedRose do
   end
   it 'stops the program if a bad item is added' do
     item = Item.new('Conjured madness', 10, 50)
-    item_2 = Item.new('Backstage passes to a TAFKAL80ETC concert', -1, 30)
+    item_2 = BackstagePass.new('Backstage passes to a TAFKAL80ETC concert', -1, 30)
     gilded_rose = GildedRose.new
     expect { gilded_rose.add_several([item_2, item]) }
       .to raise_error 'Backstage passes to a TAFKAL80ETC concert has passed its expiry date!'
