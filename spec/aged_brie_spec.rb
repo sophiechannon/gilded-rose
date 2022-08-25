@@ -5,4 +5,10 @@ describe AgedBrie do
     item = AgedBrie.new('gross cheese', 10, 50)
     expect(item.to_s).to eq('gross cheese, 10, 50')
   end
+
+  it 'updates the quantity' do
+    item = AgedBrie.new('Aged Brie', 10, 30)
+    item.update
+    expect(item.quality).to eq 31
+  end
 end
