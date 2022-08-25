@@ -21,7 +21,6 @@ class GildedRose
 
   def update_quality
     @items.map do |item|
-      next if item.is_a? Sulfura
       item.update
     end
   end
