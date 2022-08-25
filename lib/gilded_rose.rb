@@ -62,7 +62,7 @@ class GildedRose
 
   def apply_quality_rules(item)
     item_name = item.name.downcase
-    if item_name.include?('aged brie')
+    if item.is_a? AgedBrie
       handle_aged_brie(item)
     elsif item_name.include?('backstage pass')
       handle_backstage_pass(item)
