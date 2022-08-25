@@ -22,6 +22,10 @@ require ('./lib/item')
 
 I chose to use Ruby for this challenge, because I felt it was well suited to the task. I followed a TDD process by creating a suite of tests to cover all the behaviours of teach item and the GildedRose class. Itiniailly, all these tests passed because the original code was still in place. I then worked to refactor the code item by item, adding more tests as required to follow TDD practice. I then moved on to edge cases / potential errors.
 
+_EDIT: 25 Aug 2022_
+
+Because the Item class couldn't be altered, I created children classes for each type of item that inherited from the parent Item class. This is more robust, because the program behaviour is now determined by the class of the item, instead of relying on the item name to include a specific word.
+
 # Code structure
 
 I structured the code by having one main update_quality method within the GildedRose class, which called several private methods that handled the logic.
@@ -61,5 +65,5 @@ NEW - conjured:
 - check that all items' sell_in degrades at the correct rate
 - check that all items' quality degrades at the correct rate
 - check that quality cannot exceed 50 on any items
-- prevent items from having negative sell_in when initialised - I would put this in the item class ideally, but it's forbidden
-- prevent items from having > 50 quality when initialised - I would put this in the item class ideally, but it's forbidden
+- prevent items from having negative sell_in when added to the shop
+- prevent items from having > 50 quality when added to the shop
